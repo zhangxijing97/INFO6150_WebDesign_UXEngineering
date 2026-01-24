@@ -15,29 +15,18 @@ Notes:
 
 ## 2) Book Reservation Process (Flowchart)
 
-[Start]
-  |
-  v
-User opens a book detail page (book.html)
-  |
-  v
-System checks "Available copies"
-  |
-  v
-Is Available copies > 0?
-  |                         |
-  | Yes                     | No
-  v                         v
-User clicks "Reserve"       Show message: "Not available"
-  |
-  v
-Reservation request is created (status: Reserved)
-  |
-  v
-User goes to the library in person to pick up the reserved book
-  |
-  v
-[End]
+flowchart TD
+  A([Start]) --> B[User opens a book detail page (book.html)]
+  B --> C[System checks available copies]
+  C --> D{Available copies > 0?}
+
+  D -- Yes --> E[User clicks "Reserve"]
+  E --> F[System creates reservation\nStatus = Reserved]
+  F --> G[User goes to the library to pick up the reserved book]
+  G --> H([End])
+
+  D -- No --> I[Show message: "Not available"]
+  I --> H
 
 ## 3) Sources / Tools
 
