@@ -3,32 +3,28 @@
 ## 1) Website Map (Site Structure)
 
 - Home (index.html)
-  - Book Detail (book.html)
-  - Get a Library Card (card.html)
-  - (Optional future sections for a full site)
-    - News (shown on homepage)
-    - Contact (shown on homepage footer)
+  - Catalog Preview (shown on Home)
+  - Latest News (shown on Home)
+  - Contact / General Inquiries (shown on Home)
+- Book Detail Page (book.html)
+  - Book info (title, author, summary, etc.)
+  - Copies (total + available)
+  - Reserve form (start reservation process)
+- Get a Library Card (card.html)
+  - Library card request form
 
 Notes:
-- This repo includes 3 HTML pages required by the assignment.
-- Some sections (News/Contact) are presented on the homepage for simplicity.
+- This repo includes the 3 required HTML pages: index.html, book.html, card.html.
+- The catalog is represented with sample entries (preview list) for simplicity.
 
-## 2) Book Reservation Process (Flowchart)
+## 2) Book Reservation Process (Decision Table Diagram)
 
-flowchart TD
-  A([Start]) --> B[User opens a book detail page (book.html)]
-  B --> C[System checks available copies]
-  C --> D{Available copies > 0?}
-
-  D -- Yes --> E[User clicks "Reserve"]
-  E --> F[System creates reservation\nStatus = Reserved]
-  F --> G[User goes to the library to pick up the reserved book]
-  G --> H([End])
-
-  D -- No --> I[Show message: "Not available"]
-  I --> H
-
-## 3) Sources / Tools
-
-- Content is fictional and created for class assignment demo purposes.
-- AI tool used: ChatGPT (planning + HTML structure).
+| Step | Actor | Action / Decision | Outcome |
+|------|-------|-------------------|---------|
+| 1 | User | Opens a book detail page (book.html) | Book information is displayed |
+| 2 | System | Checks the number of available copies | Availability status is determined |
+| 3 | System | Are available copies greater than 0? | Decision point |
+| 4a | User | If **Yes**, clicks the **Reserve** button | Reservation request is submitted |
+| 5a | System | Marks one copy as **Reserved** | Book status becomes *Reserved* |
+| 6a | User | Goes to the library in person | User picks up the reserved book |
+| 4b | System | If **No**, shows **"Not available"** message | Reservation cannot be started |
