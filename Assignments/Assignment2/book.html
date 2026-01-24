@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library — Book Detail</title>
+</head>
+
+<body>
+  <header>
+    <h1>Vallejo Public Library</h1>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html" aria-current="page">Book (Catalog Item)</a></li>
+        <li><a href="card.html">Get a Library Card</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article aria-labelledby="book-title">
+      <header>
+        <h2 id="book-title">The Vallejo Lighthouse</h2>
+        <p><strong>Author:</strong> Jordan Lee</p>
+        <p><strong>Format:</strong> Print Book</p>
+        <p><strong>Genre:</strong> Mystery / Local History</p>
+        <p><strong>Publication Year:</strong> 2021</p>
+      </header>
+
+      <section aria-labelledby="summary">
+        <h3 id="summary">Summary</h3>
+        <p>
+          A mystery novel set near the Bay Area coastline. A local historian uncovers clues linking an old
+          lighthouse to a decades-old disappearance, revealing surprising connections in the community.
+        </p>
+      </section>
+
+      <section aria-labelledby="availability">
+        <h3 id="availability">Availability</h3>
+        <ul>
+          <li><strong>Total copies:</strong> 5</li>
+          <li><strong>Available copies:</strong> 2</li>
+          <li><strong>Status:</strong> Available for reservation</li>
+        </ul>
+        <p>
+          To request this book online, you must have a library card. If you do not have one yet,
+          <a href="card.html">get a library card here</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="reserve">
+        <h3 id="reserve">Reserve a Copy</h3>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Reservation Request</legend>
+
+            <label for="card-number">Library Card Number</label><br />
+            <input
+              id="card-number"
+              name="card-number"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              required
+            />
+            <br /><br />
+
+            <label for="pickup">Preferred pickup date</label><br />
+            <input id="pickup" name="pickup" type="date" required />
+            <br /><br />
+
+            <button type="submit">Reserve (Request)</button>
+          </fieldset>
+        </form>
+
+        <p>
+          After you request a reservation (if copies are available), the book becomes <strong>Reserved</strong>.
+          You can then go to the library in person to pick it up.
+        </p>
+      </section>
+
+      <footer>
+        <p><a href="index.html">Back to Home</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Vallejo Public Library</p>
+  </footer>
+</body>
+</html>

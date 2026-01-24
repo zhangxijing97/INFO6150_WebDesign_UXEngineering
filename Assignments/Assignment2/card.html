@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library — Get a Library Card</title>
+</head>
+
+<body>
+  <header>
+    <h1>Vallejo Public Library</h1>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book (Catalog Item)</a></li>
+        <li><a href="card.html" aria-current="page">Get a Library Card</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="card-title">
+      <h2 id="card-title">Get a Library Card</h2>
+      <p>
+        Fill out this form to request a library card. (For this assignment, the form does not submit to a real system.)
+      </p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Library Card Application</legend>
+
+          <label for="full-name">Full name</label><br />
+          <input id="full-name" name="full-name" type="text" autocomplete="name" required />
+          <br /><br />
+
+          <label for="email">Email</label><br />
+          <input id="email" name="email" type="email" autocomplete="email" required />
+          <br /><br />
+
+          <label for="address">Address</label><br />
+          <input id="address" name="address" type="text" autocomplete="street-address" required />
+          <br /><br />
+
+          <button type="submit">Submit Request</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Questions? Email
+      <a href="mailto:info@vallejopubliclibrary.example">info@vallejopubliclibrary.example</a>
+    </p>
+    <p>&copy; 2026 Vallejo Public Library</p>
+  </footer>
+</body>
+</html>
