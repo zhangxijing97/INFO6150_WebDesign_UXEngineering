@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  padding: 60px 0;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.number-seven {
+  font-size: 120px;
+  font-weight: bold;
+  color: #fbbf24;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #e0e0e0;
+    margin-top: 10px;
+}
+
+section {
+  margin: 60px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+h2 { 
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fbbf24;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+.legend-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border-left: 5px solid #fbbf24;
+}
+
+.legend-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fbbf24;
+}
+
+.soccer-ball {
+  text-align: center;
+  font-size: 80px;
+  margin: 30px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 60px;
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  color: #e0e0e0;
+}
+
+.highlights {
+  color: #fbbf24;
+  font-weight: bold;
+}

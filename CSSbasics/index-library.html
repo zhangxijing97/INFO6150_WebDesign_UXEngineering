@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vallejo Public Library</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#FAF9F9;
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --brand:#315BA0;
+  --soft:#B2D3EC;
+  --soft2:#8EA6AF;
+  --card:#ffffff;
+  --line:rgba(49,91,160,.15);
+  --shadow:0 18px 40px rgba(0,0,0,.08);
+  --radius:18px;
+  --max:880px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:24px 18px 72px;
+}
+
+/* ===== Header / Hero ===== */
+.hero{
+  background:linear-gradient(135deg,var(--soft),#eef4fb);
+  border-radius:28px;
+  padding:36px 28px 44px;
+  box-shadow:var(--shadow);
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.brand{
+  font-weight:800;
+  font-size:20px;
+  color:var(--brand);
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--brand);
+  font-weight:600;
+  margin-left:14px;
+}
+
+.hero h1{
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.05;
+  margin:28px 0 10px;
+  letter-spacing:-.03em;
+}
+
+.hero p{
+  max-width:56ch;
+  color:var(--muted);
+  font-size:17px;
+}
+
+/* ===== Sections ===== */
+section{
+  margin-top:28px;
+}
+
+.panel{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:26px 22px;
+  box-shadow:var(--shadow);
+}
+
+.panel.soft{
+  background:linear-gradient(180deg,#ffffff,var(--soft));
+}
+
+h2{
+  margin:0 0 14px;
+  color:var(--brand);
+  letter-spacing:-.01em;
+}
+
+/* ===== Search ===== */
+.search-box{
+  display:flex;
+  gap:12px;
+}
+
+input{
+  flex:1;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  font:inherit;
+}
+
+button{
+  padding:14px 18px;
+  border-radius:14px;
+  border:none;
+  background:var(--brand);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ===== Cards ===== */
+.cards{
+  display:grid;
+  gap:14px;
+}
+
+.card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  background:#fff;
+}
+
+.card h3{
+  margin:0 0 6px;
+}
+
+/* ===== News ===== */
+.news-item{
+  padding:16px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.news-item small{
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* ===== Footer ===== */
+footer{
+  margin-top:40px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="topbar">
+      <div class="brand">Vallejo Public Library</div>
+      <nav>
+        <a href="#">Search</a>
+        <a href="#">Library Card</a>
+        <a href="#">News</a>
+        <a href="#">Visit</a>
+      </nav>
+    </div>
+
+    <h1>Explore books, learning, and community.</h1>
+    <p>
+      A welcoming public library designed for readers of all ages—discover books,
+      digital resources, and programs that support lifelong learning.
+    </p>
+  </header>
+
+  <section class="panel">
+    <h2>Search the Catalog</h2>
+    <div class="search-box">
+      <input placeholder="Search by title, author, or keyword">
+      <button>Search</button>
+    </div>
+  </section>
+
+  <section class="panel soft">
+    <h2>Get a Library Card</h2>
+    <p>Sign up to borrow books, place holds, and access digital resources.</p>
+    <button style="margin-top:10px">Start Registration</button>
+  </section>
+
+  <section class="panel">
+    <h2>Latest News</h2>
+    <div class="cards">
+      <div class="news-item">
+        <small>Programs</small>
+        <h3>Weekend Story Time Returns</h3>
+        <p>Join us for family-friendly reading sessions.</p>
+      </div>
+      <div class="news-item">
+        <small>Services</small>
+        <h3>New Study Spaces Available</h3>
+        <p>Quiet seating and reservable tables.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel soft">
+    <h2>Visit the Library</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Hours</h3>
+        <p>Mon–Thu: 10–7<br>Fri–Sat: 10–5</p>
+      </div>
+      <div class="card">
+        <h3>Location</h3>
+        <p>Vallejo, CA</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © Vallejo Public Library
+  </footer>
+
+</div>
+</body>
+</html>

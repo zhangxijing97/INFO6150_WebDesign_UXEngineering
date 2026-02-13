@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library — Book Detail</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brandbar">
+        <div class="logo-box" aria-label="Library logo">Logo</div>
+        <h1 class="site-title">Vallejo Public Library</h1>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="book.html" aria-current="page">Catalog (Book)</a></li>
+          <li><a href="card.html">Get a Library Card</a></li>
+        </ul>
+      </nav>
+
+      <div class="searchbar">
+        <form action="#" method="get" role="search" aria-label="Search the catalog">
+          <label for="q">Search the catalog</label>
+          <input id="q" name="q" type="search" placeholder="Search books, authors, topics" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <article class="panel" aria-labelledby="book-title">
+      <div class="book-grid">
+        <div class="placeholder book-cover" role="img" aria-label="Book cover placeholder"></div>
+
+        <div>
+          <h2 id="book-title" class="book-title">The Vallejo Lighthouse</h2>
+          <p class="book-meta"><strong>Author:</strong> Jordan Lee &nbsp;•&nbsp; <strong>Publication Year:</strong> 2021</p>
+
+          <section aria-label="Book summary">
+            <p>
+              A mystery novel set near the Bay Area coastline. A local historian uncovers clues linking an old
+              lighthouse to a decades-old disappearance, revealing surprising connections in the community.
+            </p>
+          </section>
+
+          <section aria-label="Copies and availability">
+            <p><strong>Total copies:</strong> 5</p>
+            <p><strong>Available copies:</strong> 2</p>
+            <p><strong>Status:</strong> Available for reservation</p>
+          </section>
+
+          <div class="book-actions" aria-label="Book actions">
+            <a class="btn" href="#reserve">Reserve Book</a>
+            <a class="btn secondary" href="#checkout">Check Out</a>
+          </div>
+        </div>
+      </div>
+
+      <section id="reserve" aria-labelledby="reserve-title" class="stack" style="margin-top:18px;">
+        <h3 id="reserve-title">Reserve a Copy</h3>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Reservation Request</legend>
+
+            <div class="field">
+              <label for="card-number">Library Card Number</label>
+              <input id="card-number" name="card-number" type="text" inputmode="numeric" autocomplete="off" required />
+            </div>
+
+            <div class="field">
+              <label for="pickup">Preferred pickup date</label>
+              <input id="pickup" name="pickup" type="date" required />
+            </div>
+
+            <button class="btn" type="submit">Reserve (Request)</button>
+            <p class="helper">
+              To request a reservation online, you must have a library card.
+              If you do not have one yet, <a href="card.html">get a library card here</a>.
+            </p>
+          </fieldset>
+        </form>
+      </section>
+
+      <section id="checkout" aria-label="Checkout note" style="margin-top:18px;">
+        <h3>Check Out</h3>
+        <p>
+          For this assignment, checkout does not connect to a real system. You can use the buttons above
+          to simulate the start of the process.
+        </p>
+      </section>
+
+      <p style="margin-top:18px;"><a href="index.html">Back to Home</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section aria-label="Contact information">
+          <h2 class="footer-title">Contact info</h2>
+          <p class="small">
+            Email:
+            <a href="mailto:info@vallejopubliclibrary.example">info@vallejopubliclibrary.example</a>
+          </p>
+        </section>
+
+        <section aria-label="Opening hours">
+          <h2 class="footer-title">Opening hours</h2>
+          <p class="small">Mon–Thu: 10:00 AM – 7:00 PM</p>
+          <p class="small">Fri–Sat: 10:00 AM – 5:00 PM</p>
+          <p class="small">Sun: Closed</p>
+        </section>
+
+        <section aria-label="Address">
+          <h2 class="footer-title">Address</h2>
+          <p class="small">
+            Vallejo Public Library<br />
+            505 Santa Clara St<br />
+            Vallejo, CA 94590
+          </p>
+        </section>
+      </div>
+
+      <p class="small">&copy; 2026 Vallejo Public Library</p>
+    </div>
+  </footer>
+</body>
+</html>

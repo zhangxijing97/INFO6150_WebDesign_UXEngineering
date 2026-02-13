@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SEVEN | Soccer's Greatest Digit</title>
+    <style>
+        :root {
+            --pitch-black: #0f0f0f;
+            --gold: #ccac00;
+            --silver: #e0e0e0;
+            --accent: #FFD700;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--pitch-black);
+            color: var(--silver);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        repeating-linear-gradient(45deg, #1a1a1a 0, #1a1a1a 2px, transparent 0, transparent 50%);
+            background-size: 10px 10px;
+        }
+
+        .hero-number {
+            font-size: 15rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 0.8;
+            margin: 0;
+            text-shadow: 5px 5px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .hero-title {
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        h2 {
+            font-size: 3rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Stats Row */
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Simple Animation */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="fade-in">
+        <h1 class="hero-number">7</h1>
+        <div class="hero-title">The Legend of the Pitch</div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>The Winger's DNA</h2>
+            <p>In the traditional numbering system, the <span class="highlight">Number 7</span> is reserved for the right winger. It represents the players who hug the touchline, the ones with the explosive pace to beat a defender and the precision to whip a cross into the box. It is the number of the architect on the flanks.</p>
+        </section>
+
+        <section>
+            <h2>The 7-Meter Standard</h2>
+            <p>The ultimate goal of the game lies within a frame that defines careers. A standard FIFA regulation goal stands exactly <span class="highlight">7.32 meters wide</span>. It is within this specific width that legends are born and the "Seven" finds its ultimate purpose.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>7.32m</h3>
+                    <p>Width</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2.44m</h3>
+                    <p>Height</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Iconic Bearers</h2>
+            <p>From the "Magnificent Seven" of Manchester United to the modern era of CR7, this number has been worn by those who demand the spotlight. It isn't just a shirt; it’s a mantle of responsibility. To wear the seven is to promise the fans a moment of magic.</p>
+            <ul style="list-style: none; padding: 0; color: var(--accent);">
+                <li>• George Best</li>
+                <li>• David Beckham</li>
+                <li>• Cristiano Ronaldo</li>
+                <li>• Raul</li>
+                <li>• Garrincha</li>
+            </ul>
+        </section>
+
+        <section style="text-align: center;">
+            <h2>90 Minutes. 1 Number.</h2>
+            <p>Whether it's a 7-goal thriller or a solo run in the 7th minute, the digit is woven into the fabric of football history.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 THE SEVEN | A tribute to the beautiful game
+    </footer>
+
+</body>
+</html>

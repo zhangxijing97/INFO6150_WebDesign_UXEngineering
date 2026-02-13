@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library — Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Load the Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Skip link for accessibility (jumps to main content) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brandbar">
+        <div class="logo-box" aria-label="Library logo">Logo</div>
+        <h1 class="site-title">Vallejo Public Library</h1>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="book.html">Catalog (Book)</a></li>
+          <li><a href="card.html">Get a Library Card</a></li>
+        </ul>
+      </nav>
+
+      <div class="searchbar">
+        <form action="#" method="get" role="search" aria-label="Search the catalog">
+          <label for="q">Search the catalog</label>
+          <input id="q" name="q" type="search" placeholder="Search books, authors, topics" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="stack">
+      <p class="welcome">Welcome to the Vallejo Public Library website.</p>
+
+      <div class="placeholder" role="img" aria-label="Library photo placeholder"></div>
+
+      <section aria-labelledby="latest-news-title" class="panel">
+        <h2 id="latest-news-title" class="section-title">Latest News</h2>
+        <p class="section-subtitle">Updates and events from the library.</p>
+
+        <div class="news-card">
+          <article aria-label="News item: New Arrivals This Week">
+            <h3>New Arrivals This Week</h3>
+            <p>We added new titles to our catalog. You can view a featured book and start a reservation request.</p>
+            <p><a href="book.html">View a featured book</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="more-news-title" class="panel">
+        <h2 id="more-news-title" class="section-title">More News</h2>
+        <div class="news-grid two">
+          <div class="news-card">
+            <article aria-label="News item: Community Reading Night">
+              <h3>Community Reading Night</h3>
+              <p>Join us for a casual reading and discussion event. All ages welcome.</p>
+            </article>
+          </div>
+          <div class="news-card">
+            <article aria-label="News item: Homework Help Hours">
+              <h3>Homework Help Hours</h3>
+              <p>Students can get help with reading and school assignments during select afternoons.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="catalog-preview">
+        <h2 id="catalog-preview" class="section-title">Catalog Preview</h2>
+        <p class="section-subtitle">Sample entries for this assignment (links open the book detail page).</p>
+
+        <ul>
+          <li><a href="book.html">The Vallejo Lighthouse</a> — Mystery / Local History</li>
+          <li><a href="book.html">Bay Stories (Example)</a> — Fiction (Sample entry)</li>
+          <li><a href="book.html">Vallejo Walks (Example)</a> — Travel (Sample entry)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section aria-label="Contact information">
+          <h2 class="footer-title">Contact info</h2>
+          <p class="small">
+            Email:
+            <a href="mailto:info@vallejopubliclibrary.example">info@vallejopubliclibrary.example</a>
+          </p>
+        </section>
+
+        <section aria-label="Opening hours">
+          <h2 class="footer-title">Opening hours</h2>
+          <p class="small">Mon–Thu: 10:00 AM – 7:00 PM</p>
+          <p class="small">Fri–Sat: 10:00 AM – 5:00 PM</p>
+          <p class="small">Sun: Closed</p>
+        </section>
+
+        <section aria-label="Address">
+          <h2 class="footer-title">Address</h2>
+          <p class="small">
+            Vallejo Public Library<br />
+            505 Santa Clara St<br />
+            Vallejo, CA 94590
+          </p>
+        </section>
+      </div>
+
+      <p class="small">&copy; 2026 Vallejo Public Library</p>
+    </div>
+  </footer>
+</body>
+</html>

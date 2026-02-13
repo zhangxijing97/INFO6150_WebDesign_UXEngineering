@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soccer × Seven</title>
+  <style>
+    :root{
+      --bg0:#06090f;
+      --bg1:#0b1020;
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.72);
+      --line:rgba(234,240,255,.12);
+
+      --accent:#3cffc4;   /* electric mint */
+      --accent2:#3cc6ff;  /* stadium blue */
+      --gold:#ffd56a;     /* premium highlight */
+
+      --radius:20px;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 0%, rgba(60,198,255,.22), transparent 60%),
+        radial-gradient(900px 700px at 80% 10%, rgba(60,255,196,.18), transparent 55%),
+        radial-gradient(700px 500px at 50% 100%, rgba(255,213,106,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    /* subtle pitch-lines background */
+    .pitch{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.26;
+      background:
+        /* vertical mowing stripes */
+        repeating-linear-gradient(90deg,
+          rgba(255,255,255,.05) 0 28px,
+          rgba(255,255,255,.02) 28px 56px),
+        /* faint horizontal lines */
+        repeating-linear-gradient(0deg,
+          rgba(255,255,255,.04) 0 1px,
+          transparent 1px 64px);
+      mask-image: radial-gradient(ellipse at top, rgba(0,0,0,1), rgba(0,0,0,.35) 55%, rgba(0,0,0,0) 75%);
+      filter: blur(.2px);
+    }
+
+    /* center circle + halfway line hint */
+    .pitch::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:34%;
+      width:min(720px, 92vw);
+      height:min(720px, 92vw);
+      transform:translate(-50%,-50%);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:50%;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.06);
+    }
+    .pitch::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:34%;
+      width:min(920px, 96vw);
+      height:1px;
+      transform:translateX(-50%);
+      background: rgba(255,255,255,.16);
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 42px 18px 64px;
+      position:relative;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 10px 0 26px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:700;
+      font-size:12px;
+      color:rgba(234,240,255,.82);
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(60,255,196,.10);
+    }
+
+    .tag{
+      font-size:12px;
+      color:rgba(234,240,255,.70);
+      border:1px solid rgba(234,240,255,.14);
+      padding:8px 12px;
+      border-radius:999px;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero{
+      border: 1px solid rgba(234,240,255,.14);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-inner{
+      padding: 34px 28px 28px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:end;
+    }
+
+    /* big 7 graphic */
+    .seven{
+      position:absolute;
+      right:-40px;
+      top:-80px;
+      font-weight:900;
+      font-size: 420px;
+      line-height:1;
+      letter-spacing:-.06em;
+      color: rgba(255,255,255,.06);
+      user-select:none;
+      transform: rotate(8deg);
+      text-shadow: 0 0 40px rgba(60,198,255,.08);
+    }
+
+    .glow{
+      position:absolute;
+      inset:auto -20% -60% -20%;
+      height: 420px;
+      background: radial-gradient(circle at 40% 40%, rgba(60,255,196,.22), transparent 55%),
+                  radial-gradient(circle at 60% 20%, rgba(60,198,255,.18), transparent 50%);
+      filter: blur(10px);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 4.4vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 58ch;
+    }
+
+    .accent{
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      font-weight:800;
+    }
+
+    .stats{
+      display:grid;
+      gap:10px;
+    }
+
+    .stat{
+      border:1px solid rgba(234,240,255,.14);
+      border-radius: 16px;
+      padding: 14px 14px;
+      background: rgba(0,0,0,.20);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat b{
+      display:block;
+      font-size: 18px;
+      letter-spacing: -.01em;
+      margin-bottom: 4px;
+    }
+    .stat span{
+      color: rgba(234,240,255,.74);
+      font-size: 12px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(234,240,255,.12);
+      margin: 22px 0;
+    }
+
+    section{
+      margin-top: 22px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 10px;
+    }
+
+    h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: rgba(234,240,255,.88);
+    }
+
+    .hint{
+      margin:0;
+      color: rgba(234,240,255,.62);
+      font-size: 13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .card{
+      grid-column: span 6;
+      border:1px solid rgba(234,240,255,.14);
+      border-radius: 18px;
+      padding: 16px 16px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(60,255,196,.35);
+      background: rgba(255,255,255,.06);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size: 16px;
+      letter-spacing: -.01em;
+    }
+    .card p{
+      margin:0;
+      color: rgba(234,240,255,.74);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color: rgba(234,240,255,.78);
+      border:1px solid rgba(234,240,255,.14);
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.18);
+    }
+
+    .badge i{
+      width:8px;height:8px;border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,213,106,.10);
+      display:inline-block;
+    }
+
+    /* seven principles list */
+    .seven-list{
+      border:1px solid rgba(234,240,255,.14);
+      border-radius: 18px;
+      padding: 16px 16px;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    ol{
+      margin: 0;
+      padding-left: 22px;
+      line-height: 1.7;
+      color: rgba(234,240,255,.78);
+    }
+    ol li{
+      margin: 8px 0;
+    }
+    ol b{
+      color: rgba(234,240,255,.92);
+    }
+
+    footer{
+      margin-top: 26px;
+      color: rgba(234,240,255,.56);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    a{
+      color: rgba(234,240,255,.82);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(60,255,196,.45);
+    }
+    a:hover{color: var(--text)}
+
+    /* responsive */
+    @media (max-width: 860px){
+      .hero-inner{grid-template-columns: 1fr; align-items:start}
+      .card{grid-column: span 12}
+      .seven{font-size: 320px; right:-50px; top:-70px}
+    }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .card{transition:none}
+      .card:hover{transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pitch" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Soccer × Seven</span>
+      </div>
+      <div class="tag">Single-page • Single-column • Visual-first</div>
+    </header>
+
+    <main class="hero" role="main">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="seven" aria-hidden="true">7</div>
+
+      <div class="hero-inner">
+        <div>
+          <h1>The <span class="accent">Number Seven</span> is Soccer’s Signature.</h1>
+          <p class="lead">
+            On a pitch made of lines and angles, <b>7</b> stands out as pure identity:
+            a jersey number that signals flair, speed, and the courage to decide the match.
+            This page celebrates soccer through the lens of one digit—bold, iconic, unforgettable.
+          </p>
+
+          <div class="divider"></div>
+
+          <span class="badge"><i aria-hidden="true"></i> “Seven” = style + impact + responsibility</span>
+        </div>
+
+        <aside class="stats" aria-label="Seven quick facts">
+          <div class="stat">
+            <b>7</b>
+            <span>Classic winger / match-winner number</span>
+          </div>
+          <div class="stat">
+            <b>90+7’</b>
+            <span>The drama of stoppage time</span>
+          </div>
+          <div class="stat">
+            <b>7 Steps</b>
+            <span>From first touch to final strike</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <section>
+      <div class="section-title">
+        <h2>Why seven feels different</h2>
+        <p class="hint">A design story: energy, identity, and decisive moments.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>1) Identity on the back</h3>
+          <p>
+            A jersey number is a symbol—simple enough to read from the stands,
+            strong enough to carry a legacy.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>2) A number built for highlight reels</h3>
+          <p>
+            Seven is often associated with players who create something out of nothing:
+            dribbles, runs, and decisive final actions.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>3) Geometry meets instinct</h3>
+          <p>
+            Soccer is structured—lines, zones, spacing—yet the game is won by instincts.
+            Seven is the spark inside the structure.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>4) The moment that changes everything</h3>
+          <p>
+            A single run. A single pass. A single shot. The simplest number suits the simplest truth:
+            one moment can rewrite the match.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Seven principles of match-winning soccer</h2>
+        <p class="hint">A numbered list to reinforce the theme visually.</p>
+      </div>
+
+      <div class="seven-list">
+        <ol>
+          <li><b>Scan first</b> — head up before the ball arrives.</li>
+          <li><b>First touch</b> — make space with one control.</li>
+          <li><b>Change pace</b> — slow, then explode.</li>
+          <li><b>Take the lane</b> — attack the gap, not the crowd.</li>
+          <li><b>Be decisive</b> — commit to the move.</li>
+          <li><b>Create the extra man</b> — a pass or a dribble that breaks a line.</li>
+          <li><b>Finish with intent</b> — strike like it matters (because it does).</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <span>Designed as a one-page, single-column “match poster” layout.</span>
+      <span>Tip: try resizing the browser—the #7 and cards adapt smoothly.</span>
+    </footer>
+  </div>
+</body>
+</html>
