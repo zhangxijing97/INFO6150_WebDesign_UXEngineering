@@ -207,6 +207,45 @@ main{ padding: 18px 0 34px; }
   min-height: 220px;
 }
 
+.hero{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    linear-gradient(45deg, transparent 48%, rgba(var(--brand-rgb), 0.30) 49%, rgba(var(--brand-rgb), 0.30) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(var(--brand-rgb), 0.30) 49%, rgba(var(--brand-rgb), 0.30) 51%, transparent 52%),
+    var(--accent);
+
+  height: 220px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px){
+  .hero{
+    height: 320px;
+  }
+}
+
+.hero-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-cover{
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.book-cover-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Headings */
 .section-title{
   font-size: 2rem;
