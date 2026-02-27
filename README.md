@@ -109,3 +109,45 @@
 * **Modern Formats**:
     * **WebP**: Better compression than JPG/PNG; supports animation and transparency.
     * **AVIF**: Next-gen compression; even smaller than WebP but requires modern browser support.
+
+## Week 3: Design Principles
+
+### 1. Visual Hierarchy
+* **Definition**: The arrangement or presentation of elements in a way that implies importance.
+* **Goal**: To guide the user's eye to the most important information first.
+* **Signals of Importance**:
+    * **Size**: Larger elements attract more attention.
+    * **Color & Contrast**: Bright colors or high contrast stand out against muted backgrounds.
+    * **Typography**: Bold or unique fonts signal hierarchy.
+    * **Whitespace**: Providing room around an element makes it the focal point.
+    * **Texture & Style**: Complex textures can draw the eye compared to flat areas.
+
+### 2. Scanning Patterns
+* **F-Pattern**: Users scan the top, then move down and scan horizontally again, eventually scanning vertically down the left side. Common for text-heavy pages like articles.
+* **Z-Pattern**: The eye moves from top-left to top-right, then diagonally to bottom-left, and finishes at bottom-right. Common for landing pages with less text.
+
+### 3. Gestalt Principles of Perception
+* **Definition**: A set of laws describing how humans naturally organize individual visual elements into groups or unified wholes.
+* **Proximity**: Elements close to each other are perceived as a group.
+* **Similarity**: Elements that look alike (shape, color, size) are perceived as related.
+* **Continuity**: The eye is compelled to move through one object and continue to another.
+* **Closure**: The mind fills in missing information to create a complete image.
+* **Figure/Ground**: The ability to separate the foreground (figure) from the background (ground).
+* **Common Fate**: Elements moving in the same direction are perceived as more related than those staying still or moving elsewhere.
+
+### 4. Color Theory and Accessibility
+* **Contrast**: Text must have sufficient contrast against its background to be readable, especially for users with visual impairments.
+* **Color as Meaning**: Never use color as the *only* way to convey information (e.g., "click the red button") because colorblind users may not distinguish it.
+* **Brand Identity**: Color conveys emotion and brand personality.
+
+### 5. Typography Principles
+* **Readability**: How easy it is to read words/sentences; affected by line height, letter spacing, and font size.
+* **Legibility**: How easily individual characters can be distinguished from one another.
+* **Serif vs. Sans Serif**:
+    * **Serif**: Fonts with small decorative strokes (feet) at the ends of characters.
+    * **Sans Serif**: Fonts without those strokes; often preferred for digital screens due to better legibility at lower resolutions.
+
+### 6. Design Best Practices
+* **Consistency**: Use the same styles for similar elements (buttons, headings) across the entire site to reduce cognitive load.
+* **Affordance**: The design of an object should suggest how it is used (e.g., a button should look clickable).
+* **Feedback**: The system should always inform users about what is happening (e.g., a loading spinner or a "success" message).
