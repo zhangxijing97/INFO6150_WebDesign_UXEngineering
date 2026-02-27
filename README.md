@@ -151,3 +151,49 @@
 * **Consistency**: Use the same styles for similar elements (buttons, headings) across the entire site to reduce cognitive load.
 * **Affordance**: The design of an object should suggest how it is used (e.g., a button should look clickable).
 * **Feedback**: The system should always inform users about what is happening (e.g., a loading spinner or a "success" message).
+
+## Week 4: CSS Basics
+
+### 1. The CSS Box Model
+* **Definition**: Every element in a web page is represented as a rectangular box.
+* **Content**: The innermost part containing text or images.
+* **Padding**: Transparent area around the content, inside the border.
+* **Border**: A line that goes around the padding and content.
+* **Margin**: Transparent area outside the border that separates the element from others.
+* **Box-Sizing**: Use `box-sizing: border-box;` to ensure padding and borders are included in the element's total width and height.
+
+### 2. CSS Selectors
+* **Type Selector**: Targets elements by their tag name (e.g., `h1 { color: red; }`).
+* **Class Selector**: Targets elements with a specific class attribute, prefixed with a dot (e.g., `.highlight { background: yellow; }`).
+* **ID Selector**: Targets a unique element with a specific ID, prefixed with a hash (e.g., `#main-header { font-size: 20px; }`).
+* **Attribute Selector**: Targets elements based on an attribute or its value (e.g., `input[type="text"]`).
+* **Pseudo-classes**: Target elements in a specific state, such as `:hover`, `:active`, or `:focus`.
+
+### 3. Cascade, Specificity, and Inheritance
+* **The Cascade**: The rules that determine which CSS styles apply when multiple rules target the same element, based on source order and importance.
+* **Specificity**: A weight assigned to a given selector; IDs (highest) > Classes/Attributes > Elements (lowest).
+* **Inheritance**: Some properties (like `color` or `font-family`) are passed from parent elements to their children unless overridden.
+
+### 4. Layout Basics: Display and Position
+* **Display Property**:
+    * `block`: Elements take up the full width available and start on a new line.
+    * `inline`: Elements take up only as much width as necessary and do not start on a new line.
+    * `inline-block`: Elements flow like inline elements but can have a custom width, height, and padding.
+    * `none`: Removes the element from the page layout entirely.
+* **Position Property**:
+    * `static`: The default flow of the document.
+    * `relative`: Positioned relative to its normal position without affecting other elements.
+    * `absolute`: Positioned relative to its nearest positioned ancestor.
+    * `fixed`: Positioned relative to the browser viewport; stays in place during scrolling.
+
+### 5. Units of Measurement
+* **Absolute Units**: `px` (pixels) are fixed and do not change based on other settings.
+* **Relative Units**:
+    * `em`: Relative to the font size of the element's parent.
+    * `rem`: Relative to the font size of the root element (`<html>`).
+    * `%`: Relative to the size of the parent element.
+    * `vw`/`vh`: Relative to 1% of the viewport width or height.
+
+### 6. Colors and Backgrounds
+* **Color Formats**: Colors can be defined using Names, Hex codes (`#ffffff`), RGB (`rgb(255, 255, 255)`), or HSL.
+* **Backgrounds**: Properties like `background-color`, `background-image`, and `background-size` control the element's backdrop.
