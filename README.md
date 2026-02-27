@@ -1,34 +1,52 @@
 # INFO6150_WebDesign_UXEngineering
 
-## Week 1: Introduction to the Web — Key Exam Topics
+## Week 1: Introduction to the Web - Exam Review Notes
 
-### 1. Conceptual Foundations
-* [cite_start]**The Web vs. The Internet**: The Internet is a global network of connected computers [cite: 124, 125][cite_start], while the Web is a system of hyperlinked documents and applications running on that network[cite: 120, 123].
-* [cite_start]**Protocols**: These are the "languages" or sets of rules that allow computers to communicate[cite: 126, 139, 140].
-* [cite_start]**TCP/IP**: Developed in 1973, this protocol standardizes how different networks interconnect[cite: 131, 137].
-* [cite_start]**Resiliency**: The Internet is designed to be always connected and maintain communication even if parts of the network fail[cite: 126].
+### 1. The Internet vs. The Web
+* **The Internet**: Conceptually, it is just a bunch of computers connected to each other. They talk the same languages called **protocols**.
+* **The Web**: Created in 1989 by Sir Tim Berners-Lee to facilitate hyperlinked documents.
+* **Timeline**: The Internet opened to the public in 1991, and the Web entered general use in 1994.
+* **Resiliency**: The Internet is designed to be always connected and resilient.
 
-### 2. The Client/Server Model
-* [cite_start]**Server**: A program or computer that holds data and can perform operations on it[cite: 213, 216].
-* [cite_start]**Client**: A program (like a browser) that wants data and requests it from the server[cite: 213, 216].
-* **HTTP Request/Response**: 
-    * [cite_start]A **Request** is the client asking for a file (e.g., `GET /index.html`)[cite: 217, 226].
-    * [cite_start]A **Response** is the server’s answer (e.g., `200 OK` means the request was successful)[cite: 222, 226].
+### 2. Client/Server Model & HTTP
+* **Role of the Server**: Holds the data and has the ability to operate on it.
+* **Role of the Client**: Wants data and asks the server for it.
+* **Protocol**: Defined as the language and rules for communication.
+* **HTTP Protocol**: Allows servers and clients to send, receive, and work with HTML and other files.
+    * **Request**: An example is the command `GET /index.html`.
+    * **Response**: An example is the status `200 OK`.
 
-### 3. Core Web Technologies (The "Languages" of the Web)
-* [cite_start]**HTML (HyperText Markup Language)**: Defines the **content** and structure—what is actually on the page[cite: 395].
-* [cite_start]**CSS (Cascading Style Sheets)**: Defines the **look and feel**—how that content is styled and rendered[cite: 396].
-* [cite_start]**JavaScript**: Provides **interactivity** and functionality beyond static text[cite: 397].
+### 3. Core Web Technologies (HTML, CSS, JS)
+* **HTML (HyperText Markup Language)**: Defines the **content** (what is on the page) and gives structure.
+    * Uses **elements** represented by **tags** (e.g., `<html>`, `<body>`, `<p>`).
+    * Tags can have **attributes** to specify details (e.g., `<meta charset="UTF-8">`).
+* **CSS (Cascading Style Sheets)**: Defines the **look and feel** (how the content should be rendered).
+    * Uses **declarations** consisting of a **Property** and a **Value** separated by a **colon**.
+    * Declarations are grouped in curly braces `{}` called a **declaration block**.
+* **JavaScript**: A full-fledged programming language that provides **interactivity** (any functionality beyond writing on a page).
 
-### 4. Technical Implementation Basics
-* [cite_start]**HTML Elements**: Represented by tags (e.g., `<h1>`, `<p>`) that can have attributes to specify details[cite: 404, 406, 407].
-* [cite_start]**CSS Declarations**: Consist of a **property** (like `color`) and a **value** (like `blue`), separated by a colon[cite: 434, 435, 438].
-* [cite_start]**The DOM (Document Object Model)**: A model created by the browser when a page loads, where HTML elements are represented as nodes that JavaScript can manipulate[cite: 498, 499, 500].
-* [cite_start]**Linking Files**: CSS is linked via the `<link>` tag in the `<head>` [cite: 448][cite_start], and JavaScript is linked via the `<script>` tag[cite: 471].
+### 4. DOM (Document Object Model)
+* The DOM is a model created by the browser when a page loads.
+* HTML elements are represented as **nodes** within this model.
+* **Common JavaScript Methods**:
+    * `document`: A global object representing the page.
+    * `querySelector()`: Grabs the specific node/element you want to manipulate.
+    * `textContent`: Represents the text content of the node; modifying this updates the page dynamically.
 
-### 5. Version Control with Git/GitHub
-* [cite_start]**Git**: A versioning system used to track changes and improve team collaboration[cite: 532, 534].
-* [cite_start]**Repository**: A storage space for a project[cite: 541].
-* [cite_start]**Commit**: A "save point" for changes made to a project[cite: 544, 545].
-* [cite_start]**Branches**: Coexisting copies of a project; you create branches to work on features without affecting the main "original" code[cite: 542, 543].
-* [cite_start]**Pull Request**: A request to review and merge changes from one branch into the main branch[cite: 547].
+### 5. Frontend vs. Backend
+* **Frontend**: What happens in the client program (the browser).
+* **Backend**: What happens in server programs; involves services collaborating for large applications.
+* **Web APIs**: 
+    * **Client-side APIs**: Standard libraries available within the browser for JS to manipulate the page.
+    * **Server-side APIs**: Protocols for communication between a browser program and a server program.
+    * **Common Types**: REST (uses HTML over HTTP), SOAP (uses XML), GraphQL (query language), and gRPC (binary data).
+
+### 6. Version Control with Git & GitHub
+* **Git**: A versioning system used to control project versions and improve team collaboration.
+* **GitHub**: A provider for Git; currently owned by Microsoft.
+* **Key Concepts**:
+    * **Repository (Repo)**: Used to store a project.
+    * **Branch**: Separate, coexisting copies of a project. 
+    * **Commit**: Used to "save" your work changes to a branch.
+    * **Pull Request (PR)**: A request to update the **Main** branch with contents of another branch, usually followed by a review process.
+    * **Rule**: Never commit directly to your main branch.
