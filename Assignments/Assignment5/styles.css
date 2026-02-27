@@ -1,0 +1,74 @@
+/* General page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Center main content */
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Form elements */
+label {
+    font-weight: bold;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    background-color: #2d6cdf;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #1f4fbf;
+}
+
+/* Rock paper scissors buttons layout */
+.choice {
+    width: 32%;
+    display: inline-block;
+    margin-right: 1%;
+}
+
+/* Result text */
+#result,
+#playerChoice,
+#computerChoice {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Error message */
+#error {
+    color: red;
+    font-weight: bold;
+}
