@@ -197,3 +197,46 @@
 ### 6. Colors and Backgrounds
 * **Color Formats**: Colors can be defined using Names, Hex codes (`#ffffff`), RGB (`rgb(255, 255, 255)`), or HSL.
 * **Backgrounds**: Properties like `background-color`, `background-image`, and `background-size` control the element's backdrop.
+
+## Week 5: CSS Layouts
+
+### 1. Modern Layout Engines
+* **Flexbox (Flexible Box Layout)**: Designed for one-dimensional layouts (either a row or a column). It excels at distributing space and aligning items within a container.
+* **CSS Grid**: Designed for two-dimensional layouts (both rows and columns simultaneously). It is the most powerful layout system available in CSS for complex web designs.
+
+### 2. Flexbox Core Concepts
+* **Flex Container**: The parent element where `display: flex;` or `display: inline-flex;` is applied.
+* **Main Axis vs. Cross Axis**: The main axis is defined by `flex-direction` (default is horizontal/row); the cross axis is perpendicular to it.
+* **Alignment Properties**:
+    * `justify-content`: Aligns items along the **main axis** (e.g., `center`, `space-between`, `flex-start`).
+    * `align-items`: Aligns items along the **cross axis** (e.g., `center`, `stretch`, `flex-end`).
+    * `flex-wrap`: Determines if items should wrap to a new line if they exceed the container width.
+* **Flex Items**: The direct children of a flex container. Properties include `flex-grow`, `flex-shrink`, and `flex-basis`.
+
+### 3. CSS Grid Core Concepts
+* **Grid Container**: The parent element where `display: grid;` is applied.
+* **Terminology**:
+    * **Grid Lines**: The horizontal and vertical lines that divide the grid.
+    * **Grid Tracks**: The space between two adjacent grid lines (rows or columns).
+    * **Grid Cells**: The smallest unit of the grid (the intersection of a row and a column).
+    * **Grid Areas**: A rectangular area composed of one or more grid cells.
+* **Defining the Grid**:
+    * `grid-template-columns` and `grid-template-rows`: Define the size and number of tracks.
+    * **The `fr` Unit**: A fractional unit representing a portion of the available space in the grid container.
+    * `gap` (or `grid-gap`): Defines the spacing between rows and columns.
+
+### 4. Responsive Design & Media Queries
+* **Viewport Meta Tag**: Essential for responsive design; tells the browser how to control the page's dimensions and scaling.
+* **Media Queries**: A CSS technique used to apply styles based on device characteristics, primarily screen width.
+    * **Syntax**: `@media (max-width: 768px) { ... }` applies styles only when the screen is 768px wide or less.
+* **Mobile-First Approach**: Writing base styles for mobile screens first and using media queries to add complexity for larger screens (using `min-width`).
+
+### 5. Common Layout Patterns
+* **Centering**: Using Flexbox (`justify-content: center; align-items: center;`) is the modern standard for perfectly centering elements.
+* **Holy Grail Layout**: A classic layout featuring a header, footer, and three columns (sidebar-main-sidebar), easily achieved with CSS Grid.
+* **Sticky Footer**: Ensuring the footer stays at the bottom of the page regardless of content height.
+
+### 6. Floats and Legacy Layouts
+* **Floats**: Originally intended for wrapping text around images; previously used for entire page layouts before Flexbox/Grid.
+* **Clearing**: Using `clear: both;` or a "clearfix" hack to prevent parent containers from collapsing when children are floated.
+* **Note**: Floats should generally be avoided for structural layouts in modern development.
