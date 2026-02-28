@@ -240,3 +240,80 @@
 * **Floats**: Originally intended for wrapping text around images; previously used for entire page layouts before Flexbox/Grid.
 * **Clearing**: Using `clear: both;` or a "clearfix" hack to prevent parent containers from collapsing when children are floated.
 * **Note**: Floats should generally be avoided for structural layouts in modern development.
+
+## Week 6: JavaScript Basics
+
+### 1. Variables and Constants
+* **`const`**: The modern standard for declaring variables that will not be reassigned.
+* **`let`**: Used for variables that need to be reassigned later in the code.
+* **Naming**: Use descriptive names; constants are for values that stay the same throughout the script.
+
+### 2. Data Types
+* **String**: Textual data, such as the output from a `prompt()`.
+* **Number**: Numeric data used for calculations; can be integers or floats.
+* **Boolean**: Logical values representing `true` or `false`.
+* **Type Conversion**: Use `Number.parseInt()` to convert a string into a number for logical comparisons.
+
+### 3. Operators and Comparators
+* **Arithmetic Operators**: Basic math symbols like `+`, `-`, `*`, `/` used for calculations.
+* **Comparison Operators**: Used to compare values, such as `>` (greater than), `<` (less than), or `===` (strict equality).
+* **Logical Operators**: Symbols like `&&` (AND) and `||` (OR) used to combine multiple conditions.
+
+### 4. Control Flow: The "if" Statement
+* **Logic**: Executes a block of code only if a specific condition evaluates to true.
+* **Application**: Used for "Challenge Time" tasks, such as displaying a warning message if a user's age is below a certain limit.
+* **Structure**: Can be extended with `else` to provide an alternative path if the condition is false.
+
+### 5. Interacting with the User
+* **`window.alert()`**: Creates a simple popup box to display information to the user.
+* **`window.prompt()`**: Opens a dialog box that accepts text input from the user.
+* **`console.log()`**: Prints messages to the browser's Developer Tools console for debugging purposes.
+
+### 6. DOM Manipulation with JavaScript
+* **`document` Object**: A global object representing the entire web page.
+* **`querySelector()`**: A method used to "grab" or select a specific HTML node (like an `<h1>`) from the page.
+* **`textContent`**: A property that represents the text inside a node; it can be read or modified to update the page dynamically.
+
+### 7. Frontend vs. Backend Concepts
+* **Frontend**: Code that runs in the client program (the browser), involving HTML, CSS, and JS.
+* **Backend**: Code that runs on server programs; can involve many different languages and services.
+* **APIs**: The structure or protocol through which two programs communicate (e.g., REST, GraphQL).
+
+## Week 7: Functions and DOM Manipulation
+
+### 1. DOM Manipulation: Creating Content
+* **Creating Elements**: Use `document.createElement('tagName')` to create a new HTML element node in memory.
+* **Adding to the Page**: Use `parentElement.appendChild(newElement)` to attach the newly created element as the last child of a parent node.
+* **Modifying Content**: 
+    * `textContent`: Sets or returns the plain text content of a node.
+    * `innerHTML`: Allows you to get or set the HTML markup contained within an element. Use with caution to avoid security risks like XSS.
+* **Removing Elements**: Use `element.remove()` to delete an element from the DOM.
+
+
+### 2. HTML Forms and Inputs
+* **Accessing Input Values**: Use the `.value` property of an input element (e.g., `document.querySelector('input').value`) to retrieve what the user typed.
+* **Common Input Types**: 
+    * `text`, `password`, `number`, `checkbox`, `radio`.
+* **The `<form>` Element**: Used to collect user input. Often paired with a "submit" event to process data.
+
+### 3. Events and Event Handlers
+* **Event Listeners**: The modern way to handle events is `element.addEventListener('event', function)`.
+    * **Common Events**: `click`, `submit`, `input`, `change`, `mouseover`.
+* **Event Object**: Automatically passed to the handler function (often named `e` or `event`). 
+    * `e.preventDefault()`: Crucial for `submit` events to prevent the browser from refreshing the page.
+    * `e.target`: Refers to the specific element that triggered the event.
+
+### 4. Advanced Function Principles (SRP & DRY)
+* **Single Responsibility Principle (SRP)**: A function should do only **one** thing. If a function handles data calculation, UI updates, and logging, it should be split.
+* **DRY (Don't Repeat Yourself)**: Avoid redundant code. If you find yourself writing the same logic multiple times, move it into a shared function.
+* **Idempotent Functions**: A function that can be called multiple times without changing the result beyond the initial application.
+
+### 5. Best Practices for Function Design
+* **Input Validation**: Always check if user inputs are valid (e.g., checking if a value is a number using `isNaN()`) before processing.
+* **Edge Cases**: Consider unusual scenarios, such as empty inputs, zero values, or very large numbers, to ensure the program doesn't crash.
+* **Naming**: Use "verb-noun" pairs for function names (e.g., `calculateTotal`, `updateUI`) to clearly state the function's purpose.
+
+### 6. Testing and Debugging
+* **Developer Responsibility**: The author of the code is responsible for thorough testing.
+* **User Testing**: Letting others interact with your app is a primary way to discover unexpected bugs.
+* **Cleanup**: Always remove `console.log()` statements and debugging code before final deployment to the client.
