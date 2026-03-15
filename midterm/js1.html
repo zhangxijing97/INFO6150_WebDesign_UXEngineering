@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS challenge</title>
+    <script>
+        window.addEventListener("DOMContentLoaded", function init() {
+            const cells = ['Hi!', 'Welcome to my dynamic website', 'Good luck!'];
+            /* Add your code below this line */
+            const list = document.getElementById("myList");
+
+            for (let i = 0; i < cells.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = cells[i];
+                list.appendChild(li);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>JS Challenge</h1>
+    <p>Add JavaScript to create one list item per each element in the "cells" array.</p>
+    <p>Each list item should contain as text the string in the element.</p>
+    <ul id="myList">
+        <!-- Add list items here using JavaScript -->
+    </ul>
+</body>
+</html>

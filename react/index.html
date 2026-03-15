@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React App</title>
+</head>
+
+<body>
+
+  <!-- React will render into this div -->
+  <div id="root"></div>
+  <!-- React library -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <!-- React DOM -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Babel compiler (so browser can understand JSX) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- React code -->
+  <!-- type="text/jsx" also works -->
+  <script type="text/babel">
+
+    const rootNode = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootNode); // initialize React app
+
+    const Title = (props) => {
+        return <h1>Hello, {props.name}!</h1>
+    };
+
+    const Body = () => {
+        return <p>This is a simple React application.</p>;
+    };
+
+    const ClickCounter = () => {
+      const [counter, setCounter] = React.useState(0);
+
+      const clickHandler = () => {
+        setCounter(counter + 1);
+      };
+
+      return (
+        <div>
+          <p>Clicks: {counter}</p>
+          <button onClick={clickHandler}>Click me</button>
+        </div>
+      );
+    };
+
+    const App = () => {
+        return (
+            <>
+                <Title name="Xijing" />
+                <Body />
+                <ClickCounter />
+            </>
+        );
+    };
+
+    root.render(
+        <>
+            <App />
+        </>
+    );
+
+  </script>
+
+</body>
+</html>
