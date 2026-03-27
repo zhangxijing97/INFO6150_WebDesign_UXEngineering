@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaceX Rockets Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>SpaceX Rockets Explorer</h1>
+    <p>Browse SpaceX rockets and view detailed information.</p>
+  </header>
+
+  <main>
+    <!-- List View -->
+    <section id="list-view" class="view">
+      <h2 class="section-title">Rocket List</h2>
+      <p id="status-message" class="status-message">Loading rockets...</p>
+      <section id="rocket-list" class="rocket-grid"></section>
+    </section>
+
+    <!-- Detail View -->
+    <section id="detail-view" class="view hidden">
+      <button id="back-button" class="back-button">← Back to List</button>
+
+      <article id="rocket-detail" class="detail-card">
+        <!-- JS fills this -->
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Data from SpaceX API</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
