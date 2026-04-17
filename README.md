@@ -317,3 +317,665 @@
 * **Developer Responsibility**: The author of the code is responsible for thorough testing.
 * **User Testing**: Letting others interact with your app is a primary way to discover unexpected bugs.
 * **Cleanup**: Always remove `console.log()` statements and debugging code before final deployment to the client.
+
+## Week 8: React Fundamentals
+
+### 1. What is React
+
+-   **Definition**: React is a JavaScript library for building UI using
+    components.
+-   **Core Idea**: UI is broken into reusable, self-contained
+    components.
+-   **Data Flow**: Unidirectional (data flows from JS → UI).
+-   **Key Concept**: Re-render UI when data changes.
+
+### 2. JSX and Rendering
+
+-   **JSX**: JavaScript syntax that looks like HTML.
+-   **Rules**:
+    -   Use `className` instead of `class`
+    -   Use camelCase for attributes
+    -   Must have **one root element**
+-   **Rendering**:
+    -   `ReactDOM.createRoot()`
+    -   `root.render(<Component />)`
+
+### 3. Components
+
+-   **Definition**: Functions that return JSX.
+-   **Structure**:
+    -   Logic + return JSX
+-   **Example**:
+    -   `const Component = () => { return <h1>Hello</h1>; }`
+-   **Composition**:
+    -   Components can contain other components
+
+### 4. Props
+
+-   **Definition**: Inputs passed into components
+-   **Usage**:
+    -   `<Component propName="value" />`
+    -   Access via `props.propName`
+-   **Destructuring**:
+    -   `const Component = ({ propName }) => {}`
+-   **Default Values**:
+    -   `({ propName = "default" })`
+
+### 5. Rendering Data
+
+-   **Insert Variables**:
+    -   `{variable}`
+-   **Arrays**:
+    -   Use `.map()`
+    -   Must include `key`
+-   **Example**:
+    -   `{items.map((item, index) => <li key={index}>{item}</li>)}`
+
+### 6. Component Behavior (Re-rendering)
+
+-   **Trigger**:
+    -   State or props change
+-   **Effect**:
+    -   Entire component function runs again
+-   **Important**:
+    -   Avoid heavy computation inside render
+
+### 7. useState (State Management)
+
+-   **Syntax**:
+    -   `const [state, setState] = useState(initialValue)`
+-   **Rules**:
+    -   Do NOT modify state directly
+    -   Use setter function
+-   **Update Patterns**:
+    -   `setState(newValue)`
+    -   `setState(old => old + 1)`
+-   **Key Idea**:
+    -   State persists across re-renders
+
+### 8. useEffect (Side Effects)
+
+-   **Purpose**:
+    -   Handle external effects (API calls, DOM updates)
+-   **Syntax**:
+    -   `useEffect(() => {}, [dependencies])`
+-   **Behavior**:
+    -   Runs after render
+-   **Dependency Array**:
+    -   Controls when effect runs
+-   **Common Pitfall**:
+    -   Infinite loop if updating state inside effect
+
+### 9. React Principles
+
+-   **Immutability**:
+    -   Do not modify objects/arrays directly
+    -   Use copies (`...spread`)
+-   **Pure Functions**:
+    -   Same input → same output
+-   **Avoid Side Effects**:
+    -   Keep render logic clean
+
+### 10. Next.js Basics
+
+-   **Purpose**:
+    -   React framework for real apps
+-   **Setup**:
+    -   `npm install react react-dom next`
+-   **Structure**:
+    -   `app/page.jsx`
+-   **Run App**:
+    -   `npm run dev`
+-   **Routing**:
+    -   File-based routing system
+
+    ## Week 9: APIs
+
+### 1. What is an API
+
+-   **Definition**: API = Application Programming Interface
+-   **Purpose**: Allows frontend to communicate with backend services
+-   **Common Usage**: Web APIs use HTTP to send/receive data
+-   **Key Idea**: Client sends request → Server sends response
+
+### 2. Types of APIs
+
+-   **REST**:
+    -   Most common, uses HTTP
+-   **SOAP**:
+    -   Uses XML, more strict
+-   **GraphQL**:
+    -   Query-based, flexible
+-   **gRPC**:
+    -   High performance, complex fileciteturn2file0
+
+### 3. Requests and Responses
+
+-   **Request**:
+    -   Sent by client (browser)
+-   **Response**:
+    -   Sent by server
+-   **Structure**:
+    -   URL + method + headers + body
+-   **Example**:
+    -   `GET /api/data`
+
+### 4. REST API Concepts
+
+-   **Endpoint**:
+    -   URL that returns data instead of HTML
+-   **Example**:
+    -   `/api/symbols`
+-   **Purpose**:
+    -   Get, create, update, or delete data fileciteturn2file0
+
+### 5. HTTP Methods
+
+-   **GET**:
+    -   Retrieve data
+-   **POST**:
+    -   Send/create data
+-   **PUT**:
+    -   Update data
+-   **DELETE**:
+    -   Remove data
+
+### 6. Status Codes
+
+-   **200**:
+    -   Success
+-   **300s**:
+    -   Redirects
+-   **400s**:
+    -   Client errors (e.g., 404)
+-   **500s**:
+    -   Server errors fileciteturn2file0
+
+### 7. API Keys
+
+-   **Purpose**:
+    -   Identify user making requests
+-   **Usage**:
+    -   Passed in request URL or headers
+-   **Important**:
+    -   APIs may limit usage (quota)
+
+### 8. Testing APIs (curl)
+
+-   **Tool**:
+    -   Command-line HTTP requests
+-   **Usage**:
+    -   `curl <url>`
+-   **Purpose**:
+    -   Test APIs without browser fileciteturn2file0
+
+### 9. fetch (JavaScript)
+
+-   **Purpose**:
+    -   Make HTTP requests in JS
+-   **Syntax**:
+    -   `fetch(url)`
+-   **Returns**:
+    -   Promise
+
+### 10. Asynchronous Programming
+
+-   **Async Functions**:
+    -   Do not block execution
+-   **Reason**:
+    -   Server responses take time
+-   **Behavior**:
+    -   Code continues while waiting fileciteturn2file0
+
+### 11. Promises
+
+-   **Definition**:
+    -   Object representing future result
+-   **Methods**:
+    -   `.then()` → success
+    -   `.catch()` → error
+
+### 12. Handling Responses
+
+-   **JSON Parsing**:
+    -   `response.json()`
+-   **Note**:
+    -   Also async (returns promise)
+
+### 13. Chaining
+
+-   **Purpose**:
+    -   Simplify promise handling
+-   **Example**:
+    -   `fetch().then().then()`
+
+### 14. Callbacks
+
+-   **Definition**:
+    -   Function passed into another function
+-   **Modern Usage**:
+    -   Arrow functions
+
+### 15. Error Handling
+
+-   **Promise Style**:
+    -   `.catch(err => {})`
+-   **Async/Await Style**:
+    -   `try { } catch (err) { }`
+
+### 16. Async/Await
+
+-   **Purpose**:
+    -   Cleaner syntax for async code
+-   **Syntax**:
+    -   `const res = await fetch()`
+-   **Rule**:
+    -   Must be inside `async` function
+
+### 17. Working with JSON Data
+
+-   **Format**:
+    -   Similar to JavaScript objects
+-   **Usage**:
+    -   Access with `json.key`
+-   **Looping Objects**:
+    -   `Object.keys()`
+
+### 18. Updating the DOM with API Data
+
+-   **Select Element**:
+    -   `document.querySelector()`
+-   **Insert HTML**:
+    -   `insertAdjacentHTML()`
+-   **Example**:
+    -   Create `<option>` dynamically fileciteturn2file0
+
+### 19. Full App Flow (API App)
+
+-   **Steps**:
+    -   Get requirements
+    -   Call API
+    -   Process data
+    -   Update UI
+-   **Example App**:
+    -   Currency converter
+
+### 20. Key Pitfalls
+
+-   **Forgetting async handling**
+-   **Not parsing JSON**
+-   **API limit exceeded**
+-   **Wrong endpoint or method**
+-   **Missing API key**
+
+## Week 10: TypeScript
+
+### 1. Why Types Matter
+
+-   **Problem in JS**:
+    -   Dynamic typing can cause bugs (e.g., "1" + 2 → "12")
+-   **Goal**:
+    -   Make code predictable and safer
+-   **Key Idea**:
+    -   Types catch errors before runtime fileciteturn3file0
+
+### 2. What is TypeScript
+
+-   **Definition**:
+    -   Superset of JavaScript with static typing
+-   **Feature**:
+    -   Type checking at development time
+-   **Important**:
+    -   Must be compiled to JavaScript (transpiled)
+
+### 3. Basic Types
+
+-   **Primitive Types**:
+    -   `number`, `string`, `boolean`
+-   **Syntax**:
+    -   `const a: number = 1`
+-   **Type Inference**:
+    -   TypeScript can infer types automatically
+
+### 4. Objects
+
+-   **Inference**:
+    -   TS understands object structure automatically
+-   **Strict Checking**:
+    -   Prevents assigning wrong types
+
+### 5. Interfaces
+
+-   **Purpose**:
+    -   Define object structure
+-   **Syntax**:
+    -   `interface Book { title: string; pages: number }`
+-   **Usage**:
+    -   Enforces consistent shape
+
+### 6. Types (type keyword)
+
+-   **Alternative to Interface**:
+    -   `type Book = { ... }`
+-   **Difference**:
+    -   Uses `=` instead of keyword block
+
+### 7. Classes
+
+-   **Definition**:
+    -   Same as JS but with types
+-   **Constructor Types**:
+    -   Must define parameter types
+
+### 8. Arrays
+
+-   **Syntax**:
+    -   `Book[]`
+-   **Behavior**:
+    -   Only allows defined type elements
+
+### 9. Functions
+
+-   **Parameter Types**:
+    -   `function add(book: Book)`
+-   **Return Type**:
+    -   `(): Book`
+-   **Arrow Functions**:
+    -   Same typing rules apply
+
+### 10. Optional Parameters
+
+-   **Syntax**:
+    -   `param?: type`
+-   **Behavior**:
+    -   May be undefined
+
+### 11. Union Types
+
+-   **Definition**:
+    -   Multiple possible types
+-   **Syntax**:
+    -   `number | null`
+-   **Use Case**:
+    -   Functions returning different values
+
+### 12. Type Extension
+
+-   **Types**:
+    -   `type Car = Vehicle & { ... }`
+-   **Interfaces**:
+    -   `interface Car extends Vehicle`
+-   **Purpose**:
+    -   Build on existing structures
+
+### 13. any Type
+
+-   **Meaning**:
+    -   Disable type checking
+-   **Usage**:
+    -   Temporary only
+-   **Warning**:
+    -   Removes TypeScript benefits
+
+### 14. unknown Type
+
+-   **Meaning**:
+    -   Type is unknown
+-   **Rule**:
+    -   Must be checked before use
+
+### 15. Type Assertion
+
+-   **Purpose**:
+    -   Tell TS a specific type
+-   **Syntax**:
+    -   `value as Type`
+-   **Warning**:
+    -   Can cause runtime errors if wrong
+
+### 16. typeof
+
+-   **Usage**:
+    -   Detect primitive type at runtime
+-   **Example**:
+    -   `typeof value === "string"`
+
+### 17. Type Guards
+
+-   **Definition**:
+    -   Functions that check types
+-   **Syntax**:
+    -   `item is Type`
+-   **Purpose**:
+    -   Safe handling of union types
+
+### 18. Type Narrowing
+
+-   **Concept**:
+    -   Reduce possible types
+-   **Example**:
+    -   `HTMLElement | null`
+-   **Benefit**:
+    -   Avoid runtime errors
+
+### 19. DOM with TypeScript
+
+-   **Problem**:
+    -   Generic DOM types too broad
+-   **Solution**:
+    -   Specify exact type (e.g., `HTMLButtonElement`)
+-   **Benefit**:
+    -   Better autocomplete + safety
+
+### 20. Real-world Usage
+
+-   **Install**:
+    -   `npm install typescript`
+-   **Compile**:
+    -   `tsc`
+-   **React Support**:
+    -   Built-in in modern frameworks
+
+### 21. Key Pitfalls
+
+-   **Using any too much**
+-   **Wrong type assertions**
+-   **Forgetting null cases**
+-   **Mixing types incorrectly**
+
+## Week 11: Modern Apps & Business Modeling
+
+### 1. Modern JS Environment
+
+-   **Goal**:
+    -   Improve development speed and reliability
+-   **Features**:
+    -   Run JS outside browser (Node.js)
+    -   Live reload, tooling, package systems
+-   **Key Idea**:
+    -   Modern apps rely on many tools working together
+
+### 2. Node.js
+
+-   **Definition**:
+    -   JavaScript runtime outside the browser
+-   **Uses**:
+    -   Web servers
+    -   Running scripts
+-   **Important**:
+    -   No `window` / `document`, uses `process`
+
+### 3. Package Management (npm)
+
+-   **Purpose**:
+    -   Install and manage dependencies
+-   **Concepts**:
+    -   Packages = reusable modules
+    -   Dependencies = packages used by other packages
+-   **Alternatives**:
+    -   Yarn, pnpm
+
+### 4. Module Systems
+
+-   **Types**:
+    -   CommonJS (`require`)
+    -   AMD
+    -   ES Modules (`import/export`)
+-   **Standard**:
+    -   ES Modules (modern JS)
+
+### 5. Development Process
+
+-   **Stages**:
+    -   Initialize → Develop/Test → Deploy
+-   **Tools**:
+    -   Scaffolders, build tools, dev tools
+
+### 6. Scaffolding
+
+-   **Purpose**:
+    -   Auto-create project structure
+-   **Examples**:
+    -   `create-next-app`
+-   **Benefit**:
+    -   Saves setup time
+
+### 7. Build Process
+
+-   **Goal**:
+    -   Convert source code → browser-ready JS
+
+### 8. Transpilers
+
+-   **Definition**:
+    -   Convert code (e.g., JSX → JS)
+-   **Example**:
+    -   Babel
+
+### 9. Bundlers
+
+-   **Definition**:
+    -   Combine modules into one file
+-   **Example**:
+    -   Webpack
+-   **Key Idea**:
+    -   Resolve dependencies
+
+### 10. Minifiers
+
+-   **Purpose**:
+    -   Reduce file size
+    -   Obfuscate code
+
+### 11. Packagers
+
+-   **Purpose**:
+    -   Prepare final `/dist` folder for deployment
+
+### 12. Development Tools
+
+-   **Web Server**:
+    -   Local development server
+-   **Live Reload**:
+    -   Auto refresh on changes
+-   **Linters**:
+    -   Enforce code quality
+-   **Test Tools**:
+    -   Run automated tests
+
+### 13. Testing Overview
+
+-   **Purpose**:
+    -   Ensure correctness
+    -   Prevent regressions
+
+### 14. Testing Types
+
+-   **Unit Tests**:
+    -   Test small pieces of code
+-   **Integration Tests**:
+    -   Test interactions
+-   **End-to-End Tests**:
+    -   Test full user flow
+
+### 15. Deployment
+
+-   **Definition**:
+    -   Upload app to server (host)
+-   **Considerations**:
+    -   Cost, scalability, framework support
+
+### 16. CI/CD
+
+-   **Definition**:
+    -   Automate build + deployment
+-   **Flow**:
+    -   Code change → build → test → deploy
+
+### 17. Agile & Scrum
+
+-   **Agile**:
+    -   Iterative development
+-   **Scrum**:
+    -   Sprints, tasks, retrospectives
+
+### 18. Use Case Modeling
+
+-   **User**:
+    -   Role (e.g., Client, Manager)
+-   **Use Case**:
+    -   Action performed by user
+-   **Goal**:
+    -   Define system behavior
+
+### 19. Use Case Structure
+
+-   **Format**:
+    -   User action → system response
+-   **Focus**:
+    -   "Golden path" (normal flow)
+
+### 20. Business Modeling
+
+-   **Goal**:
+    -   Define system data and relationships
+-   **Concepts**:
+    -   Entities (objects)
+    -   Relationships
+
+### 21. CRUD Operations
+
+-   **Meaning**:
+    -   Create, Read, Update, Delete
+-   **Usage**:
+    -   Basic app operations
+
+### 22. Data Modeling
+
+-   **Approach**:
+    -   Identify nouns → objects
+    -   Identify actions → methods
+
+### 23. Object Relationships
+
+-   **Inheritance**:
+    -   One type extends another
+-   **Composition**:
+    -   One object contains another
+
+### 24. From Model to API
+
+-   **Mapping**:
+    -   CRUD → REST endpoints
+-   **Example**:
+    -   GET /books
+    -   POST /book
+    -   PUT /book/id
+    -   DELETE /book/id
+
+### 25. Key Pitfalls
+
+-   **Ignoring modeling phase**
+-   **Overcomplicating architecture**
+-   **Poor dependency management**
+-   **Skipping testing**
